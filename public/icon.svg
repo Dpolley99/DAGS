@@ -1,0 +1,68 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="DA Grid Solutions">
+  <defs>
+    <linearGradient id="hexFill" x1="136" y1="96" x2="376" y2="416" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1a3348"/>
+      <stop offset="100%" stop-color="#0b1c2e"/>
+    </linearGradient>
+    <linearGradient id="hexStroke" x1="256" y1="96" x2="256" y2="416" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#e0aa50"/>
+      <stop offset="100%" stop-color="#c8922a"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="512" height="512" rx="128" fill="#0b1c2e"/>
+
+  <g fill="#1e4976" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" letter-spacing="2" opacity="0.55">
+    <text x="48" y="72">01000100</text>
+    <text x="48" y="92">01000001</text>
+    <text x="332" y="72">01000100</text>
+    <text x="332" y="92">01000001</text>
+    <text x="48" y="448">01000001</text>
+    <text x="48" y="468">01000100</text>
+    <text x="332" y="448">01000001</text>
+    <text x="332" y="468">01000100</text>
+    <text x="196" y="488" opacity="0.7">01000100 01000001</text>
+  </g>
+
+  <path
+    d="M256 108 L374 176 L374 336 L256 404 L138 336 L138 176 Z"
+    fill="url(#hexFill)"
+    stroke="url(#hexStroke)"
+    stroke-width="6"
+    stroke-linejoin="round"
+  />
+
+  <g fill="none" stroke="#c8922a" stroke-width="1.5" opacity="0.35">
+    <path d="M256 132 L352 188 L352 324 L256 380 L160 324 L160 188 Z"/>
+  </g>
+
+  <g fill="#c8922a" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="700" opacity="0.9">
+    <text x="168" y="158" text-anchor="middle">01</text>
+    <text x="344" y="158" text-anchor="middle">00</text>
+    <text x="168" y="362" text-anchor="middle">01</text>
+    <text x="344" y="362" text-anchor="middle">00</text>
+  </g>
+
+  <text
+    x="256"
+    y="278"
+    text-anchor="middle"
+    font-family="'Barlow Condensed', ui-sans-serif, system-ui, sans-serif"
+    font-size="148"
+    font-weight="800"
+    fill="#e8edf2"
+    letter-spacing="-6"
+  >DA</text>
+
+  <text
+    x="256"
+    y="318"
+    text-anchor="middle"
+    font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+    font-size="14"
+    font-weight="600"
+    fill="#c8922a"
+    letter-spacing="3"
+    opacity="0.85"
+  >01000100 · 01000001</text>
+</svg>

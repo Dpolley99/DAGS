@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme {
+  --color-aegis-navy: #0b1c2e;
+  --color-aegis-mid: #1e4976;
+  --color-aegis-steel: #1a3348;
+  --color-aegis-accent: #c8922a;
+  --color-aegis-gold: #e0aa50;
+  --color-aegis-offwhite: #e8edf2;
+  --color-aegis-silver: #8b9dad;
+  --color-aegis-light: #b8c8d8;
+
+  --font-display: "Barlow Condensed", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+
+  --font-weight-300: 300;
+  --font-weight-500: 500;
+  --font-weight-600: 600;
+  --font-weight-700: 700;
+  --font-weight-800: 800;
+
+  --tracking-widest2: 0.15em;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-aegis-navy);
+  color: var(--color-aegis-offwhite);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@utility btn-primary {
+  @apply inline-flex items-center gap-2 bg-aegis-accent hover:bg-aegis-gold text-aegis-navy font-display font-bold tracking-wide uppercase px-8 py-4 transition-colors duration-200 text-sm;
+}
+
+@utility btn-outline {
+  @apply inline-flex items-center gap-2 border border-aegis-silver text-aegis-light hover:border-aegis-gold hover:text-aegis-gold font-display font-semibold tracking-wide uppercase px-8 py-4 transition-colors duration-200 text-sm;
+}
+
+@utility section-label {
+  @apply font-display font-semibold text-aegis-accent tracking-widest2 uppercase text-xs;
+}
+
+@utility section-heading {
+  @apply font-display font-extrabold text-aegis-offwhite leading-tight;
+}
+
+@utility divider-accent {
+  @apply block w-12 h-0.5 bg-aegis-accent mt-4 mb-6;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0b1c2e;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e4976;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c8922a;
+}

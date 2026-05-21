@@ -1,0 +1,84 @@
+
+export default function Footer() {
+  const year = new Date().getFullYear();
+
+  return (
+    <footer className="bg-aegis-navy border-t border-aegis-steel/40">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 py-14">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+          {/* Brand */}
+          <div className="lg:col-span-2">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="flex items-center justify-center w-8 h-8 bg-aegis-accent">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                  <path d="M9 1L16 5V13L9 17L2 13V5L9 1Z" stroke="#0B1C2E" strokeWidth="1.5" fill="none"/>
+                  <path d="M9 5V9L12 11" stroke="#0B1C2E" strokeWidth="1.5" strokeLinecap="round"/>
+                </svg>
+              </span>
+              <span className="font-display font-700 text-aegis-offwhite text-lg tracking-wide uppercase">
+                DA Grid<span className="text-aegis-accent"> Solutions</span>
+              </span>
+            </div>
+            <p className="font-body font-300 text-aegis-silver text-sm leading-relaxed max-w-xs">
+              Manufacturer-backed supplier of HV and UHV Air Insulated Switchgear to Distribution Network Operators, Independent Connection Providers, and EPC contractors.
+            </p>
+            <p className="font-mono text-xs text-aegis-silver/60 mt-4 uppercase tracking-wider">
+              33 kV – 400 kV &nbsp;·&nbsp; IEC 62271 Series
+            </p>
+          </div>
+
+          {/* Product range */}
+          <div>
+            <p className="font-mono text-xs text-aegis-silver uppercase tracking-widest mb-4">Product Range</p>
+            <ul className="space-y-2">
+              {['33 kV AIS Switchgear', '66 kV AIS Switchgear', '132 kV AIS Switchgear', '275 kV AIS Switchgear', '400 kV AIS Switchgear'].map((item) => (
+                <li key={item}>
+                  <a href="#products" className="font-body font-300 text-aegis-silver hover:text-aegis-gold text-sm transition-colors duration-150">
+                    {item}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <p className="font-mono text-xs text-aegis-silver uppercase tracking-widest mb-4">Contact</p>
+            <ul className="space-y-3">
+              <li>
+                <a href="#enquiry" className="font-body font-300 text-aegis-silver hover:text-aegis-gold text-sm transition-colors duration-150">
+                  Submit an Enquiry
+                </a>
+              </li>
+              <li>
+                <a href="#enquiry" className="font-body font-300 text-aegis-silver hover:text-aegis-gold text-sm transition-colors duration-150">
+                  Request a Quotation
+                </a>
+              </li>
+              <li>
+                <a href="#enquiry" className="font-body font-300 text-aegis-silver hover:text-aegis-gold text-sm transition-colors duration-150">
+                  Technical Pre-Sales
+                </a>
+              </li>
+              <li>
+                <a href="#enquiry" className="font-body font-300 text-aegis-silver hover:text-aegis-gold text-sm transition-colors duration-150">
+                  Documentation Requests
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Bottom bar */}
+        <div className="border-t border-aegis-steel/30 pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <p className="font-mono text-xs text-aegis-silver/50">
+            &copy; {year} DA Grid Solutions. All rights reserved.
+          </p>
+          <p className="font-mono text-xs text-aegis-silver/40 uppercase tracking-wider">
+            HV &amp; UHV Air Insulated Switchgear — Manufacturer-Backed Supply
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}
