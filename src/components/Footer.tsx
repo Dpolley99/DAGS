@@ -8,64 +8,70 @@ export default function Footer() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="flex items-center justify-center w-8 h-8 bg-aegis-accent">
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-                  <path d="M9 1L16 5V13L9 17L2 13V5L9 1Z" stroke="#0B1C2E" strokeWidth="1.5" fill="none"/>
-                  <path d="M9 5V9L12 11" stroke="#0B1C2E" strokeWidth="1.5" strokeLinecap="round"/>
-                </svg>
-              </span>
-              <span className="font-display font-700 text-aegis-offwhite text-lg tracking-wide uppercase">
-                DA Grid<span className="text-aegis-accent"> Solutions</span>
-              </span>
+            <div className="rounded border border-aegis-steel/40 bg-aegis-navy/70 p-5 h-full">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="flex items-center justify-center w-8 h-8 bg-aegis-accent">
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                    <path d="M9 1L16 5V13L9 17L2 13V5L9 1Z" stroke="#0B1C2E" strokeWidth="1.5" fill="none"/>
+                    <path d="M9 5V9L12 11" stroke="#0B1C2E" strokeWidth="1.5" strokeLinecap="round"/>
+                  </svg>
+                </span>
+                <span className="font-display font-700 text-aegis-offwhite text-lg tracking-wide uppercase">
+                  DA Grid<span className="text-aegis-accent"> Solutions</span>
+                </span>
+              </div>
+              <p className="font-body font-300 text-aegis-silver text-sm leading-relaxed max-w-xs">
+                Manufacturer-backed supplier of HV and UHV Air Insulated Switchgear to Distribution Network Operators, Independent Connection Providers, and EPC contractors.
+              </p>
+              <p className="font-mono text-xs text-aegis-silver/60 mt-4 uppercase tracking-wider">
+                33 kV – 400 kV &nbsp;·&nbsp; IEC 62271 Series
+              </p>
             </div>
-            <p className="font-body font-300 text-aegis-silver text-sm leading-relaxed max-w-xs">
-              Manufacturer-backed supplier of HV and UHV Air Insulated Switchgear to Distribution Network Operators, Independent Connection Providers, and EPC contractors.
-            </p>
-            <p className="font-mono text-xs text-aegis-silver/60 mt-4 uppercase tracking-wider">
-              33 kV – 400 kV &nbsp;·&nbsp; IEC 62271 Series
-            </p>
           </div>
 
           {/* Product range */}
           <div>
-            <p className="font-mono text-xs text-aegis-silver uppercase tracking-widest mb-4">Product Range</p>
-            <ul className="space-y-2">
-              {['33 kV AIS Switchgear', '66 kV AIS Switchgear', '132 kV AIS Switchgear', '275 kV AIS Switchgear', '400 kV AIS Switchgear'].map((item) => (
-                <li key={item}>
-                  <a href="#products" className="font-body font-300 text-aegis-silver hover:text-aegis-gold text-sm transition-colors duration-150">
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <div className="rounded border border-aegis-steel/40 bg-aegis-navy/70 p-5 h-full">
+              <p className="font-mono text-xs text-aegis-silver uppercase tracking-widest mb-4">Product Range</p>
+              <ul className="space-y-2">
+                {['33 kV AIS Switchgear', '66 kV AIS Switchgear', '132 kV AIS Switchgear', '275 kV AIS Switchgear', '400 kV AIS Switchgear'].map((item) => (
+                  <li key={item}>
+                    <a href="#products" className="font-body font-300 text-aegis-silver hover:text-aegis-gold text-sm transition-colors duration-150">
+                      {item}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           {/* Contact */}
           <div>
-            <p className="font-mono text-xs text-aegis-silver uppercase tracking-widest mb-4">Contact</p>
-            <ul className="space-y-3">
-              <li>
-                <a href="#enquiry" className="font-body font-300 text-aegis-silver hover:text-aegis-gold text-sm transition-colors duration-150">
-                  Submit an Enquiry
-                </a>
-              </li>
-              <li>
-                <a href="#enquiry" className="font-body font-300 text-aegis-silver hover:text-aegis-gold text-sm transition-colors duration-150">
-                  Request a Quotation
-                </a>
-              </li>
-              <li>
-                <a href="#enquiry" className="font-body font-300 text-aegis-silver hover:text-aegis-gold text-sm transition-colors duration-150">
-                  Technical Pre-Sales
-                </a>
-              </li>
-              <li>
-                <a href="#enquiry" className="font-body font-300 text-aegis-silver hover:text-aegis-gold text-sm transition-colors duration-150">
-                  Documentation Requests
-                </a>
-              </li>
-            </ul>
+            <div className="rounded border border-aegis-steel/40 bg-aegis-navy/70 p-5 h-full">
+              <p className="font-mono text-xs text-aegis-silver uppercase tracking-widest mb-4">Contact</p>
+              <div className="space-y-3 text-sm text-aegis-silver/90">
+                <div>
+                  <p className="font-display font-700 text-aegis-offwhite uppercase tracking-wide text-xs mb-2">Registered address</p>
+                  <address className="not-italic leading-relaxed">
+                    DA GRID SOLUTIONS LTD<br />
+                    3rd Floor<br />
+                    Old Stock Exchange<br />
+                    St Nicholas Street<br />
+                    Bristol<br />
+                    BS1 1TG
+                  </address>
+                </div>
+                <div className="border-t border-aegis-steel/30 pt-3">
+                  <p className="font-display font-700 text-aegis-offwhite uppercase tracking-wide text-xs mb-1">Email us</p>
+                  <a
+                    href="mailto:enquiries@dagridsolutions.co.uk"
+                    className="font-body text-aegis-gold hover:text-aegis-accent transition-colors duration-150"
+                  >
+                    enquiries@dagridsolutions.co.uk
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
