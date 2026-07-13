@@ -28,12 +28,11 @@ export default function Nav() {
       <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-16 lg:h-20">
         {/* Logo */}
         <a href="#" className="flex items-center gap-3 group" aria-label="DA Grid Solutions home">
-          <span className="flex items-center justify-center w-8 h-8 bg-aegis-accent">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-              <path d="M9 1L16 5V13L9 17L2 13V5L9 1Z" stroke="#0B1C2E" strokeWidth="1.5" fill="none"/>
-              <path d="M9 5V9L12 11" stroke="#0B1C2E" strokeWidth="1.5" strokeLinecap="round"/>
-            </svg>
-          </span>
+          <img
+            src="/Logo.png"
+            alt="DA Grid Solutions logo"
+            className="h-8 w-auto object-contain"
+          />
           <span className="font-display font-700 text-aegis-offwhite text-lg tracking-wide uppercase">
             DA <span className="text-aegis-accent font-200">Grid Solutions</span>
           </span>
