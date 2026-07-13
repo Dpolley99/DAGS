@@ -41,7 +41,7 @@ export default function Hero() {
           </h1>
 
           <p className="font-body font-300 text-aegis-light text-lg lg:text-xl leading-relaxed max-w-xl mb-10">
-            DA Grid Solutions provides type-tested HV and UHV Air Insulated Switchgear for utilities, independent connection providers, and EPC contractors — offering international manufacturing capability, UK technical support, and pricing advantages enabled by an efficient global supply chain.
+            DA Grid Solutions provides type-tested MV, HV and UHV Air Insulated Switchgear for utilities, independent connection providers, and EPC contractors — offering international manufacturing capability, shorter lead times, UK technical support, and pricing advantages enabled by an efficient global supply chain.
           </p>
 
           <div className="flex flex-wrap gap-4 items-center">
