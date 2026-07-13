@@ -28,6 +28,7 @@ export default function EnquiryForm() {
   const [form, setForm] = useState<FormState>(INITIAL);
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -41,12 +42,59 @@ export default function EnquiryForm() {
     async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
       setSubmitting(true);
-      // Mock submission delay
-      await new Promise<void>((resolve) => setTimeout(resolve, 1200));
-      setSubmitting(false);
-      setSubmitted(true);
+      setError(null);
+
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID as string | undefined;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string | undefined;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string | undefined;
+
+      if (!serviceId || !templateId || !publicKey) {
+        setSubmitting(false);
+        setError('Email delivery is not configured yet. Add your EmailJS Service ID, Template ID and Public Key to the local environment file and restart the dev server.');
+        return;
+      }
+
+      try {
+        const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            service_id: serviceId,
+            template_id: templateId,
+            user_id: publicKey,
+            template_params: {
+              from_name: form.name,
+              organisation: form.organisation,
+              role: form.role,
+              email: form.email,
+              phone: form.phone,
+              enquiry_type: form.enquiryType,
+              voltage_class: form.voltageClass,
+              message: form.message,
+              reply_to: form.email,
+              to_email: 'enquiries@dagridsolutions.co.uk',
+              sender_mailbox: 'it@mydags.co.uk',
+              subject: `New enquiry from ${form.name || 'website'}`,
+            },
+          }),
+        });
+
+        if (!response.ok) {
+          throw new Error(`EmailJS request failed with status ${response.status}`);
+        }
+
+        setForm(INITIAL);
+        setSubmitted(true);
+      } catch (err) {
+        console.error('Enquiry submission failed', err);
+        setError('Your enquiry could not be sent right now. Please email enquiries@dagridsolutions.co.uk directly.');
+      } finally {
+        setSubmitting(false);
+      }
     },
-    []
+    [form]
   );
 
   const inputClass =
@@ -252,6 +300,12 @@ export default function EnquiryForm() {
                     className={`${inputClass} resize-none`}
                   />
                 </div>
+
+                {error ? (
+                  <p className="rounded border border-red-500/40 bg-red-500/10 px-4 py-3 font-body text-sm text-red-200">
+                    {error}
+                  </p>
+                ) : null}
 
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 pt-2">
                   <button
